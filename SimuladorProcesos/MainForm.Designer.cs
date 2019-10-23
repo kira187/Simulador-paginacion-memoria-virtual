@@ -29,22 +29,19 @@
         private void InitializeComponent()
         {
             this.dataGridViewProcesos = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonEjecutar = new MetroFramework.Controls.MetroButton();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.lblInfo = new MetroFramework.Controls.MetroLabel();
@@ -55,19 +52,22 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Memoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProcesos)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroTabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,58 +85,16 @@
             this.nombre,
             this.estado,
             this.tiempo,
-            this.Tipo});
-            this.dataGridViewProcesos.Location = new System.Drawing.Point(18, 16);
+            this.Memoria});
+            this.dataGridViewProcesos.Location = new System.Drawing.Point(3, 13);
             this.dataGridViewProcesos.MultiSelect = false;
             this.dataGridViewProcesos.Name = "dataGridViewProcesos";
             this.dataGridViewProcesos.ReadOnly = true;
             this.dataGridViewProcesos.RowHeadersVisible = false;
             this.dataGridViewProcesos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridViewProcesos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProcesos.Size = new System.Drawing.Size(291, 307);
+            this.dataGridViewProcesos.Size = new System.Drawing.Size(340, 307);
             this.dataGridViewProcesos.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.id.Width = 60;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
-            this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.estado.Width = 80;
-            // 
-            // tiempo
-            // 
-            this.tiempo.HeaderText = "Tiempo";
-            this.tiempo.Name = "tiempo";
-            this.tiempo.ReadOnly = true;
-            this.tiempo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.tiempo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tiempo.Width = 45;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            this.Tipo.Visible = false;
             // 
             // metroTabControl1
             // 
@@ -152,15 +110,15 @@
             // 
             this.metroTabPage1.Controls.Add(this.metroLabel9);
             this.metroTabPage1.Controls.Add(this.metroLabel8);
-            this.metroTabPage1.Controls.Add(this.pictureBox4);
-            this.metroTabPage1.Controls.Add(this.pictureBox5);
-            this.metroTabPage1.Controls.Add(this.pictureBox6);
             this.metroTabPage1.Controls.Add(this.pictureBox8);
-            this.metroTabPage1.Controls.Add(this.pictureBox2);
-            this.metroTabPage1.Controls.Add(this.pictureBox3);
-            this.metroTabPage1.Controls.Add(this.pictureBox1);
-            this.metroTabPage1.Controls.Add(this.listBox1);
             this.metroTabPage1.Controls.Add(this.pictureBox7);
+            this.metroTabPage1.Controls.Add(this.pictureBox6);
+            this.metroTabPage1.Controls.Add(this.pictureBox5);
+            this.metroTabPage1.Controls.Add(this.pictureBox4);
+            this.metroTabPage1.Controls.Add(this.pictureBox3);
+            this.metroTabPage1.Controls.Add(this.pictureBox2);
+            this.metroTabPage1.Controls.Add(this.listBox1);
+            this.metroTabPage1.Controls.Add(this.pictureBox1);
             this.metroTabPage1.Controls.Add(this.buttonEjecutar);
             this.metroTabPage1.Controls.Add(this.dataGridViewProcesos);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
@@ -171,89 +129,107 @@
             this.metroTabPage1.Text = "Inicio";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             // 
-            // pictureBox4
+            // metroLabel9
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox4.Location = new System.Drawing.Point(349, 92);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 20);
-            this.pictureBox4.TabIndex = 19;
-            this.pictureBox4.TabStop = false;
+            this.metroLabel9.AutoSize = true;
+            this.metroLabel9.Location = new System.Drawing.Point(375, 269);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(92, 19);
+            this.metroLabel9.TabIndex = 21;
+            this.metroLabel9.Text = "Sector: 64 MB";
             // 
-            // pictureBox5
+            // metroLabel8
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox5.Location = new System.Drawing.Point(349, 113);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(50, 20);
-            this.pictureBox5.TabIndex = 18;
-            this.pictureBox5.TabStop = false;
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.Location = new System.Drawing.Point(375, 250);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(113, 19);
+            this.metroLabel8.TabIndex = 20;
+            this.metroLabel8.Text = "Memoria: 512 MB";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox8.Location = new System.Drawing.Point(375, 70);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox8.TabIndex = 19;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox7.Location = new System.Drawing.Point(375, 91);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox7.TabIndex = 18;
+            this.pictureBox7.TabStop = false;
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox6.Location = new System.Drawing.Point(349, 134);
+            this.pictureBox6.Location = new System.Drawing.Point(375, 112);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(50, 20);
             this.pictureBox6.TabIndex = 17;
             this.pictureBox6.TabStop = false;
             // 
-            // pictureBox8
+            // pictureBox5
             // 
-            this.pictureBox8.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox8.Location = new System.Drawing.Point(349, 155);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(50, 20);
-            this.pictureBox8.TabIndex = 16;
-            this.pictureBox8.TabStop = false;
+            this.pictureBox5.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox5.Location = new System.Drawing.Point(375, 133);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox5.TabIndex = 16;
+            this.pictureBox5.TabStop = false;
             // 
-            // pictureBox2
+            // pictureBox4
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox2.Location = new System.Drawing.Point(349, 176);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 20);
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox4.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox4.Location = new System.Drawing.Point(375, 154);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox4.TabIndex = 15;
+            this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox3.Location = new System.Drawing.Point(349, 197);
+            this.pictureBox3.Location = new System.Drawing.Point(375, 175);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 20);
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBox2
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox1.Location = new System.Drawing.Point(349, 218);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 20);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox2.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox2.Location = new System.Drawing.Point(375, 196);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(419, 99);
+            this.listBox1.Location = new System.Drawing.Point(445, 77);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(78, 160);
             this.listBox1.TabIndex = 12;
             // 
-            // pictureBox7
+            // pictureBox1
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox7.Location = new System.Drawing.Point(349, 239);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(50, 20);
-            this.pictureBox7.TabIndex = 11;
-            this.pictureBox7.TabStop = false;
+            this.pictureBox1.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox1.Location = new System.Drawing.Point(375, 217);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // buttonEjecutar
             // 
-            this.buttonEjecutar.Location = new System.Drawing.Point(349, 38);
+            this.buttonEjecutar.Location = new System.Drawing.Point(375, 16);
             this.buttonEjecutar.Name = "buttonEjecutar";
             this.buttonEjecutar.Size = new System.Drawing.Size(142, 23);
             this.buttonEjecutar.TabIndex = 2;
@@ -349,23 +325,47 @@
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "Referencias : ";
             // 
-            // metroLabel8
+            // id
             // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(349, 272);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(113, 19);
-            this.metroLabel8.TabIndex = 20;
-            this.metroLabel8.Text = "Memoria: 512 MB";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.id.Width = 60;
             // 
-            // metroLabel9
+            // nombre
             // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(349, 291);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(92, 19);
-            this.metroLabel9.TabIndex = 21;
-            this.metroLabel9.Text = "Sector: 64 MB";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado.Width = 80;
+            // 
+            // tiempo
+            // 
+            this.tiempo.HeaderText = "Tiempo";
+            this.tiempo.Name = "tiempo";
+            this.tiempo.ReadOnly = true;
+            this.tiempo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.tiempo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tiempo.Width = 45;
+            // 
+            // Memoria
+            // 
+            this.Memoria.HeaderText = "Memoria";
+            this.Memoria.Name = "Memoria";
+            this.Memoria.ReadOnly = true;
+            this.Memoria.Width = 50;
             // 
             // MainForm
             // 
@@ -382,14 +382,14 @@
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
             this.ResumeLayout(false);
@@ -411,22 +411,22 @@
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn tiempo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Memoria;
     }
 }
 

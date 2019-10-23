@@ -16,17 +16,17 @@ namespace SimuladorProcesos
         public string Estado { get; set; }
         public int Quantum { get; set; }
         public int TiempoRestante { get; set; }
-        public int TypeProcess { get; set; }
+        public int Memoria { get; set; }
 
-        public Proceso(int id, string nombre, int tiempo, int typeProcess)
+        public Proceso(int id, string nombre, int tiempo, int memoria)
         {
             this.Id = id;
             this.Nombre = nombre;
             this.Estado = "READY";
             this.Tiempo = tiempo;
             this.IO = 0;
-            this.TypeProcess = typeProcess;
             this.TiempoRestante = 0;
+            this.Memoria = memoria;
         }
 
     }

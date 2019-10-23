@@ -19,7 +19,7 @@ namespace SimuladorProcesos
         private LinkedList<Proceso> procesos;
         private Random random;
         private RoundRobin roundRobin;
-        int quantum = 1;
+        int quantum = 2;
 
         public MainForm()
         {
@@ -28,17 +28,27 @@ namespace SimuladorProcesos
             random = new Random();
             process = Process.GetProcesses();
             cargarProcesos();
+
+            //pictureBox1.BackColor = Color.FromArgb(0, 171, 169);
+            //pictureBox2.BackColor = Color.FromArgb(238, 17, 17);
+            //pictureBox3.BackColor = Color.FromArgb(185, 29, 71);
+            //pictureBox4.BackColor = Color.FromArgb(30, 113, 69);
+            //pictureBox4.BackColor = Color.FromArgb(96, 60, 186);
+            //pictureBox5.BackColor = Color.FromArgb(45, 137, 239);
+            //pictureBox6.BackColor = Color.FromArgb(43, 87, 151);
+            //pictureBox7.BackColor = Color.FromArgb(255, 196, 13);
+            //pictureBox8.BackColor = Color.FromArgb(227, 162, 26);
         }
 
         private void cargarProcesos()
         {
-            int tiempo, typeProcess; ;
+            int tiempo, Memory;
             for (int i = 0; i < 13; i++)
             {
-                tiempo = random.Next(3, 15);
-                typeProcess = random.Next(1, 3);
+                tiempo = random.Next(2, 6);
+                Memory = random.Next(15, 500);
 
-                Proceso proceso = new Proceso(process[i].Id, process[i].ProcessName, tiempo, typeProcess);
+                Proceso proceso = new Proceso(process[i].Id, process[i].ProcessName, tiempo, Memory);
                 procesos.AddLast(proceso);
                 agregarProceso(proceso);
             }
@@ -50,25 +60,16 @@ namespace SimuladorProcesos
             string nombre = proceso.Nombre;
             string estado = proceso.Estado;
             string tiempo = proceso.Tiempo.ToString();
-            string LectOrWritter;
+            string memoria = proceso.Memoria.ToString();
 
-            if (proceso.TypeProcess == 1)
-            {
-                LectOrWritter = "READER";
-            }
-            else
-            {
-                LectOrWritter = "WRITTER";
-            }
-
-            string[] row = {id, nombre, estado, tiempo, LectOrWritter};
+            string[] row = {id, nombre, estado, tiempo, memoria};
             dataGridViewProcesos.Rows.Add(row);
         }
 
         private void IniciarRR()
         {
             Proceso[] arrProcesos = procesos.ToArray();
-            roundRobin = new RoundRobin(ref dataGridViewProcesos);
+            roundRobin = new RoundRobin(ref dataGridViewProcesos, ref pictureBox1, ref pictureBox2, ref pictureBox3, ref pictureBox4, ref pictureBox5, ref pictureBox6, ref pictureBox7, ref pictureBox8);
             roundRobin.runRoundRobin(ref arrProcesos, quantum);
         }
         

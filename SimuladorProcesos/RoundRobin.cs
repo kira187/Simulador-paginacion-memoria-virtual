@@ -11,17 +11,34 @@ namespace SimuladorProcesos
     public class RoundRobin
     {
         DataGridView dataGridView;
+        PictureBox pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8;
         private List<Proceso> ListReaders = new List<Proceso>();
+        private List<PictureBox> ListPictureBoxs = new List<PictureBox>();
 
         //----------------RoundRobin Class Constructor-------------------
-        public RoundRobin(ref DataGridView temp_dataGridView)
+        public RoundRobin(ref DataGridView temp_dataGridView, ref PictureBox temp_pictureBox1, ref PictureBox temp_pictureBox2, ref PictureBox temp_pictureBox3, ref PictureBox temp_pictureBox4, ref PictureBox temp_pictureBox5, ref PictureBox temp_pictureBox6, ref PictureBox temp_pictureBox7, ref PictureBox temp_pictureBox8)
         {
             dataGridView = temp_dataGridView;
+            pictureBox1 = temp_pictureBox1;
+            pictureBox2 = temp_pictureBox2;
+            pictureBox3 = temp_pictureBox3;
+            pictureBox4 = temp_pictureBox4;
+            pictureBox5 = temp_pictureBox5;
+            pictureBox6 = temp_pictureBox6;
+            pictureBox7 = temp_pictureBox7;
+            pictureBox8 = temp_pictureBox8;
+
+            PictureBox[] PB = { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox6, pictureBox7, pictureBox8 };
+            ListPictureBoxs.AddRange(PB);
         }
 
         //----------------Main Round Robin Algorithm Method-------------------
         public void runRoundRobin(ref Proceso[] procesos, int quantum)
         {
+            int freeSectors = 8;
+            int sectors = 0;
+            int i;
+
             foreach (var proceso1 in procesos)
             {
                 proceso1.TiempoRestante = proceso1.Tiempo;
@@ -31,47 +48,79 @@ namespace SimuladorProcesos
                 bool executionFinished = true;
                 foreach (var task in procesos)
                     {
-                    while (task.TiempoRestante > 0)
+                    //while (task.TiempoRestante > 0){}
+                    if (task.Memoria > 64)
                     {
-                        if (task.TiempoRestante == 0)
+                        sectors = (task.Memoria / 64);
+                    }
+                    else
+                    {
+                        sectors = 1;
+                    }
+                    if (sectors <= freeSectors)
+                    {
+                        foreach (var PB in ListPictureBoxs)
                         {
-                            task.Estado = "COMPLETED";
+                            if (PB.BackColor == Color.DarkGray)
+                            {
+                                PB.BackColor = Color.FromArgb(0, 171, 169);
+                                sectors--;
+                                freeSectors--;
+                            }
+                            if (sectors == 0)
+                            {
+                                i = 8;
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("SIN ESPACIO");
+                        task.Estado = "WAITING";
+                        updateDataGridView(dataGridView, procesos);
+                        //wait()
+                        //nextestade()
+                    }
+
+                    if (task.TiempoRestante == 0)
+                    {
+                        task.Estado = "COMPLETED";
+                        updateDataGridView(dataGridView, procesos);
+                    }
+
+                    else if (task.TiempoRestante > 0)
+                    {
+                        executionFinished = false;
+                        if (task.TiempoRestante > quantum)
+                        {
+
+                            task.Estado = "RUNNING";
+                            updateDataGridView(dataGridView, procesos);
+                            executionTimer(quantum);
+
+                            task.TiempoRestante = task.TiempoRestante - quantum;
+
+                            task.Estado = "READY";
                             updateDataGridView(dataGridView, procesos);
                         }
 
-                        else if (task.TiempoRestante > 0)
+                        else
                         {
-                            executionFinished = false;
-                            if (task.TiempoRestante > quantum)
+                            while (task.IO > 0)
                             {
-
-                                task.Estado = "RUNNING";
-                                updateDataGridView(dataGridView, procesos);
-                                executionTimer(quantum);
-
-                                task.TiempoRestante = task.TiempoRestante - quantum;
-
-                                task.Estado = "READY";
-                                updateDataGridView(dataGridView, procesos);
+                                ioExecution(procesos, task.Id, task.IO);
+                                task.IO = task.IO - 1;
                             }
 
-                            else
-                            {
-                                while (task.IO > 0)
-                                {
-                                    ioExecution(procesos, task.Id, task.IO);
-                                    task.IO = task.IO - 1;
-                                }
+                            task.Estado = "RUNNING";
+                            updateDataGridView(dataGridView, procesos);
+                            executionTimer(task.TiempoRestante);
 
-                                task.Estado = "RUNNING";
-                                updateDataGridView(dataGridView, procesos);
-                                executionTimer(task.TiempoRestante);
+                            task.TiempoRestante = 0;
 
-                                task.TiempoRestante = 0;
-
-                                task.Estado = "COMPLETED";
-                                updateDataGridView(dataGridView, procesos);
-                            }
+                            task.Estado = "COMPLETED";
+                            updateDataGridView(dataGridView, procesos);
                         }
                     }
                     if (task.IO > 0)
@@ -86,6 +135,7 @@ namespace SimuladorProcesos
                 }
             }
         }
+
         public void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
@@ -98,6 +148,7 @@ namespace SimuladorProcesos
                 }
             }
         }
+        
         //----------------Update Data Grid View Method-------------------------------
         public void updateDataGridView(DataGridView dataGridView, Proceso[] procesos)
         {
@@ -107,18 +158,7 @@ namespace SimuladorProcesos
 
             foreach (var proceso in procesos)
             {
-                string LectOrWritter;
-
-                if (proceso.TypeProcess == 1)
-                {
-                    LectOrWritter = "READER";
-                }
-                else
-                {
-                    LectOrWritter = "WRITTER";
-                }
-
-                string[] row = { proceso.Id.ToString(), proceso.Nombre, proceso.Estado, proceso.TiempoRestante.ToString(), LectOrWritter };
+                string[] row = { proceso.Id.ToString(), proceso.Nombre, proceso.Estado, proceso.TiempoRestante.ToString(), proceso.Memoria.ToString() };
                 dataGridView.Rows.Add(row);
 
                 //if (proceso.Estado == "RUNNING")
