@@ -38,15 +38,19 @@ namespace SimuladorProcesos
             //pictureBox6.BackColor = Color.FromArgb(43, 87, 151);
             //pictureBox7.BackColor = Color.FromArgb(255, 196, 13);
             //pictureBox8.BackColor = Color.FromArgb(227, 162, 26);
+
+
+            string aux = "#FFCC66";
+            pictureBox8.BackColor = System.Drawing.ColorTranslator.FromHtml(aux);
         }
 
         private void cargarProcesos()
         {
             int tiempo, Memory;
-            for (int i = 0; i < 13; i++)
+            for (int i = 0; i < 5; i++)
             {
                 tiempo = random.Next(2, 6);
-                Memory = random.Next(15, 500);
+                Memory = random.Next(15, 300);
 
                 Proceso proceso = new Proceso(process[i].Id, process[i].ProcessName, tiempo, Memory);
                 procesos.AddLast(proceso);

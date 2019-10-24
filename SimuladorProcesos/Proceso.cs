@@ -22,7 +22,7 @@ namespace SimuladorProcesos
         {
             this.Id = id;
             this.Nombre = nombre;
-            this.Estado = "READY";
+            this.Estado = "NEW";
             this.Tiempo = tiempo;
             this.IO = 0;
             this.TiempoRestante = 0;
