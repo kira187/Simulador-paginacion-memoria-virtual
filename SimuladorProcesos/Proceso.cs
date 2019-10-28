@@ -17,8 +17,9 @@ namespace SimuladorProcesos
         public int Quantum { get; set; }
         public int TiempoRestante { get; set; }
         public int Memoria { get; set; }
+        public string Color { get; set; }
 
-        public Proceso(int id, string nombre, int tiempo, int memoria)
+        public Proceso(int id, string nombre, int tiempo, int memoria, string color)
         {
             this.Id = id;
             this.Nombre = nombre;
@@ -27,6 +28,7 @@ namespace SimuladorProcesos
             this.IO = 0;
             this.TiempoRestante = 0;
             this.Memoria = memoria;
+            this.Color = color;
         }
 
     }

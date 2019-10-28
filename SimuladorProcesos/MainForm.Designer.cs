@@ -40,7 +40,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonEjecutar = new MetroFramework.Controls.MetroButton();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
@@ -86,14 +85,14 @@
             this.estado,
             this.tiempo,
             this.Memoria});
-            this.dataGridViewProcesos.Location = new System.Drawing.Point(3, 13);
+            this.dataGridViewProcesos.Location = new System.Drawing.Point(19, 13);
             this.dataGridViewProcesos.MultiSelect = false;
             this.dataGridViewProcesos.Name = "dataGridViewProcesos";
             this.dataGridViewProcesos.ReadOnly = true;
             this.dataGridViewProcesos.RowHeadersVisible = false;
             this.dataGridViewProcesos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridViewProcesos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProcesos.Size = new System.Drawing.Size(340, 307);
+            this.dataGridViewProcesos.Size = new System.Drawing.Size(258, 307);
             this.dataGridViewProcesos.TabIndex = 0;
             // 
             // metroTabControl1
@@ -103,7 +102,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(23, 81);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(541, 362);
+            this.metroTabControl1.Size = new System.Drawing.Size(482, 362);
             this.metroTabControl1.TabIndex = 2;
             // 
             // metroTabPage1
@@ -117,14 +116,13 @@
             this.metroTabPage1.Controls.Add(this.pictureBox4);
             this.metroTabPage1.Controls.Add(this.pictureBox3);
             this.metroTabPage1.Controls.Add(this.pictureBox2);
-            this.metroTabPage1.Controls.Add(this.listBox1);
             this.metroTabPage1.Controls.Add(this.pictureBox1);
             this.metroTabPage1.Controls.Add(this.buttonEjecutar);
             this.metroTabPage1.Controls.Add(this.dataGridViewProcesos);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(533, 323);
+            this.metroTabPage1.Size = new System.Drawing.Size(474, 323);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Inicio";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -132,16 +130,16 @@
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(375, 269);
+            this.metroLabel9.Location = new System.Drawing.Point(302, 270);
             this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(92, 19);
+            this.metroLabel9.Size = new System.Drawing.Size(155, 19);
             this.metroLabel9.TabIndex = 21;
-            this.metroLabel9.Text = "Sector: 64 MB";
+            this.metroLabel9.Text = "Marco De Pagina: 64 MB";
             // 
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(375, 250);
+            this.metroLabel8.Location = new System.Drawing.Point(302, 251);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(113, 19);
             this.metroLabel8.TabIndex = 20;
@@ -150,86 +148,78 @@
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox8.Location = new System.Drawing.Point(375, 70);
+            this.pictureBox8.Location = new System.Drawing.Point(335, 61);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox8.Size = new System.Drawing.Size(71, 20);
             this.pictureBox8.TabIndex = 19;
             this.pictureBox8.TabStop = false;
             // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox7.Location = new System.Drawing.Point(375, 91);
+            this.pictureBox7.Location = new System.Drawing.Point(335, 82);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox7.Size = new System.Drawing.Size(71, 20);
             this.pictureBox7.TabIndex = 18;
             this.pictureBox7.TabStop = false;
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox6.Location = new System.Drawing.Point(375, 112);
+            this.pictureBox6.Location = new System.Drawing.Point(335, 103);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox6.Size = new System.Drawing.Size(71, 20);
             this.pictureBox6.TabIndex = 17;
             this.pictureBox6.TabStop = false;
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox5.Location = new System.Drawing.Point(375, 133);
+            this.pictureBox5.Location = new System.Drawing.Point(335, 124);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox5.Size = new System.Drawing.Size(71, 20);
             this.pictureBox5.TabIndex = 16;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox4.Location = new System.Drawing.Point(375, 154);
+            this.pictureBox4.Location = new System.Drawing.Point(335, 145);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox4.Size = new System.Drawing.Size(71, 20);
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox3.Location = new System.Drawing.Point(375, 175);
+            this.pictureBox3.Location = new System.Drawing.Point(335, 166);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox3.Size = new System.Drawing.Size(71, 20);
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox2.Location = new System.Drawing.Point(375, 196);
+            this.pictureBox2.Location = new System.Drawing.Point(335, 187);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox2.Size = new System.Drawing.Size(71, 20);
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(445, 77);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(78, 160);
-            this.listBox1.TabIndex = 12;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.DarkGray;
-            this.pictureBox1.Location = new System.Drawing.Point(375, 217);
+            this.pictureBox1.Location = new System.Drawing.Point(335, 208);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 20);
+            this.pictureBox1.Size = new System.Drawing.Size(71, 20);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
             // buttonEjecutar
             // 
-            this.buttonEjecutar.Location = new System.Drawing.Point(375, 16);
+            this.buttonEjecutar.Location = new System.Drawing.Point(302, 22);
             this.buttonEjecutar.Name = "buttonEjecutar";
             this.buttonEjecutar.Size = new System.Drawing.Size(142, 23);
             this.buttonEjecutar.TabIndex = 2;
@@ -249,7 +239,7 @@
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(533, 323);
+            this.metroTabPage2.Size = new System.Drawing.Size(474, 323);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Acerca de ...";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
@@ -312,9 +302,9 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(122, 28);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(283, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(323, 19);
             this.metroLabel2.TabIndex = 3;
-            this.metroLabel2.Text = "Tanenbaum (Pagina: 79)\", \"Sistemas Operativos";
+            this.metroLabel2.Text = "Stallings Williams (Pagina: 270)\", \"Sistemas Operativos";
             // 
             // metroLabel1
             // 
@@ -349,6 +339,7 @@
             this.estado.ReadOnly = true;
             this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.estado.Visible = false;
             this.estado.Width = 80;
             // 
             // tiempo
@@ -371,13 +362,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 466);
+            this.ClientSize = new System.Drawing.Size(520, 466);
             this.Controls.Add(this.metroTabControl1);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Resizable = false;
             this.ShowInTaskbar = false;
             this.Text = "Simulador Paginación Memoria Virtual";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProcesos)).EndInit();
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
@@ -412,7 +404,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;

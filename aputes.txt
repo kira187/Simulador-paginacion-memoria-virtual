@@ -1,0 +1,87 @@
+ if (sectors <= freeSectors && ListProcessesWaiting.Count > 0)
+                        {
+                            foreach (var task2 in ListProcessesWaiting)
+                            {
+                                if (task2.Memoria > 64)
+                                {
+                                    sectors = Math.Ceiling(task2.Memoria / 64.0);
+                                }
+                                else
+                                {
+                                    sectors = 1;
+                                }
+                                if (sectors <= freeSectors)
+                                {
+
+                                    foreach (var PB in ListPictureBoxs)
+                                    {
+                                        if (PB.BackColor == Color.DarkGray)
+                                        {
+                                            PB.BackColor = System.Drawing.ColorTranslator.FromHtml(task2.Color);
+                                            sectors--;
+                                            freeSectors--;
+                                            if (sectors == 0) { break; }
+                                        }
+                                    }
+
+                                    if (task2.TiempoRestante > 0)
+                                    {
+                                        executionFinished = false;
+                                        if (task2.TiempoRestante > quantum)
+                                        {
+
+                                            task2.Estado = "RUNNING";
+                                            updateDataGridView(dataGridView, procesos);
+                                            executionTimer(quantum);
+
+                                            task2.TiempoRestante = task2.TiempoRestante - quantum;
+
+                                            task2.Estado = "READY";
+                                            updateDataGridView(dataGridView, procesos);
+                                        }
+                                        else
+                                        {
+                                            while (task2.IO > 0)
+                                            {
+                                                ioExecution(procesos, task2.Id, task2.IO);
+                                                task2.IO = task2.IO - 1;
+                                            }
+
+                                            task2.Estado = "RUNNING";
+                                            updateDataGridView(dataGridView, procesos);
+                                            executionTimer(task2.TiempoRestante);
+
+                                            task2.TiempoRestante = 0;
+
+                                            task2.Estado = "COMPLETED";
+                                            updateDataGridView(dataGridView, procesos);
+
+                                            double aux = Math.Ceiling(task2.Memoria / 64.0);
+
+                                            freeSectors += (int)aux;
+                                            foreach (var PB2 in ListPictureBoxs)
+                                            {
+                                                if (PB2.BackColor == System.Drawing.ColorTranslator.FromHtml(task2.Color))
+                                                {
+                                                    PB2.BackColor = Color.DarkGray;
+                                                    aux--;
+                                                    if (aux == 0) { break; }
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                    if (task2.IO > 0)
+                                    {
+                                        ioExecution(procesos, task2.Id, task2.IO);
+                                        task2.IO = task2.IO - 1;
+                                    }
+                                }
+                                else
+                                {
+                                    break;
+                                }
+
+                            }
+                            
+                        }

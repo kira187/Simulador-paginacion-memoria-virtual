@@ -20,6 +20,7 @@ namespace SimuladorProcesos
         private Random random;
         private RoundRobin roundRobin;
         int quantum = 2;
+        String[] Colors = { "#E3A21A", "#7e3878", "#1e7145", "#000000", "#603cba", "#00aba9", "#2d89ef", "#2b5797", "#ffc40d", "#da532c", "#ee1111", "#b91d47", "#00a300" };
 
         public MainForm()
         {
@@ -28,31 +29,17 @@ namespace SimuladorProcesos
             random = new Random();
             process = Process.GetProcesses();
             cargarProcesos();
-
-            //pictureBox1.BackColor = Color.FromArgb(0, 171, 169);
-            //pictureBox2.BackColor = Color.FromArgb(238, 17, 17);
-            //pictureBox3.BackColor = Color.FromArgb(185, 29, 71);
-            //pictureBox4.BackColor = Color.FromArgb(30, 113, 69);
-            //pictureBox4.BackColor = Color.FromArgb(96, 60, 186);
-            //pictureBox5.BackColor = Color.FromArgb(45, 137, 239);
-            //pictureBox6.BackColor = Color.FromArgb(43, 87, 151);
-            //pictureBox7.BackColor = Color.FromArgb(255, 196, 13);
-            //pictureBox8.BackColor = Color.FromArgb(227, 162, 26);
-
-
-            string aux = "#FFCC66";
-            pictureBox8.BackColor = System.Drawing.ColorTranslator.FromHtml(aux);
         }
 
         private void cargarProcesos()
         {
             int tiempo, Memory;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 13; i++)
             {
-                tiempo = random.Next(2, 6);
-                Memory = random.Next(15, 300);
+                tiempo = random.Next(3, 5);
+                Memory = random.Next(20, 200);
 
-                Proceso proceso = new Proceso(process[i].Id, process[i].ProcessName, tiempo, Memory);
+                Proceso proceso = new Proceso(process[i].Id, process[i].ProcessName, tiempo, Memory, Colors[i]);
                 procesos.AddLast(proceso);
                 agregarProceso(proceso);
             }
@@ -87,6 +74,11 @@ namespace SimuladorProcesos
             lblInfo.Text = "Es aceptable tener múltiples procesos leyendo la base de" +
                 "datos al mismo tiempo, pero si un proceso está actualizando(escribiendo en) la base de datos, ningún otro" +
                 "podrá tener acceso a ella, ni siquiera los lectores ";
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
